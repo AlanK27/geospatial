@@ -12,10 +12,7 @@ class json_to_csv:
         
         p_list = []
 
-        try: p_list.append(data_file['formatted_address'])
 
-        except:
-            p_list.append(None)
 
         try: p_list.append(data_file["geometry"]["location"]['lat'])
 
@@ -42,7 +39,7 @@ class json_to_csv:
         except:
             p_list.append(None)
 
-        try: p_list.append(data_file['raiting'])
+        try: p_list.append(data_file['raitings'])
 
         except:
             p_list.append(None)
@@ -56,6 +53,11 @@ class json_to_csv:
 
         except:
             p_list.append(None)
+
+        try: p_list.append(data_file['formatted_address'])
+
+        except:
+            p_list.append(None)
         
         return p_list
 
@@ -63,15 +65,16 @@ class json_to_csv:
     def resturant_header():
         
         return [
-            'formatted_address,',
+            
             'latitude',
-            'longitude'
+            'longitude',
             'id',
             'name',
             'price_level',
             'rating',
             "user_ratings_total",
-            'types'
+            'types',
+            'formatted_address'
         ]
 
 

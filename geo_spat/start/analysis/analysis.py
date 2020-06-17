@@ -16,7 +16,7 @@ def analyze_resturants(name):
     for result in arcadia['results']:
         plist = j2c.json_2_list_resturant(result)
         j2c.to_csv(plist, 'arcadia_resturants.csv', path)
-
+        
 
 
 
